@@ -1,0 +1,681 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nepal &amp; Bhutan — Itinerary</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="topbar"><div class="inner">
+  <div class="brand">Nepal <span class="dot">&amp;</span> Bhutan · 2026</div>
+  <nav class="tabs">
+    <a class="on" href="index.html">Itinerary</a>
+    <a href="practical.html">Practical</a>
+    <a href="tips.html">Tips &amp; customs</a>
+  </nav>
+  <button class="themebtn" onclick="var r=document.documentElement;r.dataset.theme=(r.dataset.theme==='dark'?'light':'dark')">Theme</button>
+</div></div>
+
+<header class="hero">
+  <div class="kicker">Stijn &amp; Kristin · 25 Sep – 18 Oct 2026</div>
+  <h1>Himalayan Peaks &amp; the Dragon Kingdom</h1>
+  <p>Kathmandu Valley → nine days across Bhutan with Breathe Bhutan → the Mardi Himal ridge above Pokhara → back to the valley for Dashain.</p>
+  <div class="chips">
+    <span>24 days door to door</span>
+    <span>2 treks · Bumdra + Mardi Himal</span>
+    <span>Max altitude 4,500 m</span>
+    <span>Post-monsoon — the clearest skies of the year</span>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="stats">
+    <div class="box"><div class="k">Locked in</div><div class="v">Flights · Kathmandu 2 nts · all of Bhutan</div></div>
+    <div class="box"><div class="k">Open window</div><div class="v">6 – 17 Oct · 11 nights in Nepal</div></div>
+    <div class="box"><div class="k">The new plan</div><div class="v">Pokhara · Sarangkot · Mardi Himal</div></div>
+    <div class="box"><div class="k">Trek</div><div class="v">5 walking days · 1,770 → 4,500 m</div></div>
+    <div class="box"><div class="k">Festival</div><div class="v">Indra Jatra on arrival, Dashain on departure</div></div>
+  </div>
+
+  <div class="toc">
+    <a href="#altitude">📈 Altitude</a>
+    <a href="#transit">✈ Out</a>
+    <a href="#ktm1">Kathmandu</a>
+    <a href="#bhutan">Bhutan</a>
+    <a href="#pokhara">Pokhara</a>
+    <a href="#mardi">Mardi Himal</a>
+    <a href="#valley">Valley finale</a>
+    <a href="#shape">Why this shape</a>
+  </div>
+
+  <div class="note">
+    <p><b>How to read this.</b> <span class="badge b-ok">booked</span> is already paid for and confirmed. <span class="badge b-todo">to book</span> still needs arranging — every one of those items has a line on the <a href="practical.html">Practical</a> page. <span class="badge b-flex">flex</span> is deliberate slack: trek days slip and Nepali domestic flights get weathered out, and you want that buffer <em>before</em> the flight home, not after.</p>
+  </div>
+
+  <!-- ============ ALTITUDE PROFILE ============ -->
+  <section id="altitude">
+    <h2 class="sec">How high you'll be, day by day</h2>
+    <p class="lead">Two treks, two peaks. The Bumdra camp on 4 October is what makes the Mardi Himal ridge a week later feel manageable.</p>
+
+    <div class="viz-root">
+      <figure class="viz-figure">
+        <figcaption>Altitude profile, 26 September – 17 October</figcaption>
+        <p class="viz-sub">Metres above sea level. The line is where you sleep; the pale area is the highest point you touch that day.</p>
+
+        <div class="viz-legend">
+          <span><i class="viz-key-line"></i>Where you sleep</span>
+          <span><i class="viz-key-fill"></i>Highest point reached that day</span>
+          <span><i class="viz-key-dash"></i>3,000 m — altitude starts to be felt</span>
+        </div>
+
+        <div class="viz-scroll">
+        <svg class="viz-svg" id="altSvg" viewBox="0 0 960 372" role="img"
+             aria-label="Altitude profile from 26 September to 17 October 2026. Kathmandu around 1,350 metres, rising across Bhutan to a camp at 3,800 metres at Bumdra on 4 October, back down to Pokhara, then climbing the Mardi Himal ridge to 3,580 metres at High Camp on 9 October and a high point of 4,200 metres on 10 October, before returning to the Kathmandu valley at around 1,350 metres."></svg>
+        </div>
+
+        <div class="viz-tip" id="altTip" aria-hidden="true"></div>
+
+        <details class="viz-table">
+          <summary>Show the numbers</summary>
+          <div class="tblwrap"><table class="compact" id="altTable">
+            <thead><tr><th>Date</th><th>Where you sleep</th><th class="num">Sleeping altitude</th><th class="num">Day's high point</th></tr></thead>
+            <tbody></tbody>
+          </table></div>
+        </details>
+      </figure>
+    </div>
+
+    <div class="tip">
+      <p><b>Read the two peaks together.</b> You sleep at 3,800 m at Bumdra on 4 October and touch about 3,850 m the next morning above Tiger's Nest. Five days later you sleep at 3,580 m at High Camp — <em>lower</em> than you already slept in Bhutan — before the push to 4,200 m. That ordering is the whole reason this trek is a sensible thing to bolt onto the end of the trip rather than a gamble.</p>
+      <p>The one line to watch is the 10th: up to 4,200 m (4,500 m if you take Base Camp), then down to sleep at 3,210 m. Climb high, sleep low — it's deliberate.</p>
+    </div>
+  </section>
+
+  <script>
+  (function(){
+    var D = [
+      {d:"26 Sep", p:"Patan, Kathmandu",      s:1350, h:1400, leg:0},
+      {d:"27 Sep", p:"Patan, Kathmandu",      s:1350, h:1400, leg:0},
+      {d:"28 Sep", p:"Thimphu",               s:2320, h:2400, leg:1},
+      {d:"29 Sep", p:"Punakha, via Dochula",  s:1250, h:3100, leg:1, lab:"Dochula Pass 3,100", ly:-13, lx:0,   anc:"middle", dot:"h"},
+      {d:"30 Sep", p:"Punakha",               s:1250, h:1450, leg:1},
+      {d:"1 Oct",  p:"Phobjikha",             s:3000, h:3360, leg:1},
+      {d:"2 Oct",  p:"Lobesa, Wangdue",       s:1350, h:3360, leg:1},
+      {d:"3 Oct",  p:"Paro, via Dochula",     s:2280, h:3100, leg:1},
+      {d:"4 Oct",  p:"Bumdra camp",           s:3800, h:3800, leg:1, lab:"Bumdra camp 3,800", ly:-15, lx:-6, anc:"middle", dot:"s"},
+      {d:"5 Oct",  p:"Paro",                  s:2280, h:3850, leg:1},
+      {d:"6 Oct",  p:"Sarangkot",             s:1590, h:1600, leg:2},
+      {d:"7 Oct",  p:"Forest Camp",           s:2520, h:2520, leg:2},
+      {d:"8 Oct",  p:"Low Camp",              s:2970, h:2970, leg:2},
+      {d:"9 Oct",  p:"High Camp",             s:3580, h:3580, leg:2, lab:"High Camp 3,580", ly:4, lx:-9, anc:"end", dot:"s"},
+      {d:"10 Oct", p:"Badal Danda",           s:3210, h:4200, leg:2, lab:"Upper View Point 4,200", ly:-14, lx:-2, anc:"middle", dot:"h"},
+      {d:"11 Oct", p:"Pokhara, Lakeside",     s:820,  h:3210, leg:2},
+      {d:"12 Oct", p:"Pokhara, Lakeside",     s:820,  h:1100, leg:2},
+      {d:"13 Oct", p:"Pokhara, Lakeside",     s:820,  h:900,  leg:2},
+      {d:"14 Oct", p:"Bhaktapur",             s:1400, h:1400, leg:3},
+      {d:"15 Oct", p:"Patan / Kathmandu",     s:1350, h:1400, leg:3},
+      {d:"16 Oct", p:"Patan / Kathmandu",     s:1350, h:1400, leg:3},
+      {d:"17 Oct", p:"Fly home",              s:1350, h:1350, leg:3}
+    ];
+    var LEGS = [
+      {n:"Kathmandu",             a:0,  b:1},
+      {n:"Bhutan",                a:2,  b:9},
+      {n:"Pokhara & Mardi Himal", a:10, b:17},
+      {n:"Valley finale",         a:18, b:21}
+    ];
+
+    var W=960, H=372, L=46, R=16, T=58, B=48;
+    var PW=W-L-R, PH=H-T-B, MAX=4600, n=D.length;
+    var X=function(i){ return L + i*(PW/(n-1)); };
+    var Y=function(v){ return T + PH*(1 - v/MAX); };
+    var NS="http://www.w3.org/2000/svg";
+    var svg=document.getElementById("altSvg");
+    if(!svg) return;
+    function el(t,a){ var e=document.createElementNS(NS,t); for(var k in a){ e.setAttribute(k,a[k]); } return e; }
+    function fmt(v){ return v.toLocaleString("en-US"); }
+
+    /* --- leg zones + headings (labelled, so the tint is never the only cue) --- */
+    LEGS.forEach(function(g,gi){
+      var x0 = gi===0 ? L : (X(g.a)+X(g.a-1))/2;
+      var x1 = gi===LEGS.length-1 ? L+PW : (X(g.b)+X(g.b+1))/2;
+      if(gi%2===1) svg.appendChild(el("rect",{x:x0,y:T-26,width:x1-x0,height:PH+26,fill:"var(--viz-zone)"}));
+      var t=el("text",{x:(x0+x1)/2,y:T-34,"text-anchor":"middle","font-size":"10.5",
+        "letter-spacing":".08em","fill":"var(--viz-muted)","font-weight":"700"});
+      t.textContent=g.n.toUpperCase();
+      svg.appendChild(t);
+    });
+
+    /* --- gridlines + y ticks --- */
+    [0,1000,2000,3000,4000].forEach(function(v){
+      svg.appendChild(el("line",{x1:L,x2:L+PW,y1:Y(v),y2:Y(v),stroke:"var(--viz-grid)","stroke-width":1}));
+      var t=el("text",{x:L-9,y:Y(v)+4,"text-anchor":"end","font-size":"10.5",fill:"var(--viz-muted)",
+        style:"font-variant-numeric:tabular-nums"});
+      t.textContent=v===0?"0":fmt(v);
+      svg.appendChild(t);
+    });
+    var ylab=el("text",{x:L-9,y:T-12,"text-anchor":"end","font-size":"10",fill:"var(--viz-muted)"});
+    ylab.textContent="m";
+    svg.appendChild(ylab);
+
+    /* --- area: highest point reached --- */
+    var ph="M "+L+" "+Y(0);
+    D.forEach(function(r,i){ ph+=" L "+X(i)+" "+Y(r.h); });
+    ph+=" L "+(L+PW)+" "+Y(0)+" Z";
+    svg.appendChild(el("path",{d:ph,fill:"var(--viz-series)","fill-opacity":"var(--viz-band-op)"}));
+
+    /* --- area + line: where you sleep --- */
+    var ps="M "+L+" "+Y(0);
+    D.forEach(function(r,i){ ps+=" L "+X(i)+" "+Y(r.s); });
+    ps+=" L "+(L+PW)+" "+Y(0)+" Z";
+    svg.appendChild(el("path",{d:ps,fill:"var(--viz-series)","fill-opacity":"var(--viz-sleep-op)"}));
+
+    var pl="";
+    D.forEach(function(r,i){ pl+=(i?" L ":"M ")+X(i)+" "+Y(r.s); });
+    svg.appendChild(el("path",{d:pl,fill:"none",stroke:"var(--viz-series)","stroke-width":2,
+      "stroke-linejoin":"round","stroke-linecap":"round"}));
+
+    /* --- 3,000 m reference line --- */
+    svg.appendChild(el("line",{x1:L,x2:L+PW,y1:Y(3000),y2:Y(3000),stroke:"var(--viz-muted)",
+      "stroke-width":1,"stroke-dasharray":"5 5","opacity":".7"}));
+
+    /* --- selective direct labels --- */
+    D.forEach(function(r,i){
+      if(!r.lab) return;
+      var v = r.dot==="h" ? r.h : r.s;
+      svg.appendChild(el("circle",{cx:X(i),cy:Y(v),r:4.5,fill:"var(--viz-series)",
+        stroke:"var(--viz-surface)","stroke-width":2}));
+      var t=el("text",{x:X(i)+(r.lx||0),y:Y(v)+(r.ly||-12),"text-anchor":r.anc||"middle",
+        "font-size":"11","font-weight":"650",fill:"var(--viz-ink)"});
+      t.textContent=r.lab;
+      svg.appendChild(t);
+    });
+
+    /* --- x axis --- */
+    D.forEach(function(r,i){
+      var parts=r.d.split(" ");
+      var t=el("text",{x:X(i),y:T+PH+18,"text-anchor":"middle","font-size":"10.5",
+        fill:"var(--viz-muted)",style:"font-variant-numeric:tabular-nums"});
+      t.textContent=parts[0];
+      svg.appendChild(t);
+      if(i===0 || parts[1]==="Oct" && D[i-1].d.split(" ")[1]==="Sep"){
+        var m=el("text",{x:X(i),y:T+PH+33,"text-anchor":"middle","font-size":"10",
+          "letter-spacing":".08em","font-weight":"700",fill:"var(--viz-muted)"});
+        m.textContent=parts[1].toUpperCase();
+        svg.appendChild(m);
+      }
+    });
+
+    /* --- hover layer --- */
+    var hoverG=el("g",{opacity:"0"});
+    var cross=el("line",{y1:T-26,y2:T+PH,stroke:"var(--viz-muted)","stroke-width":1,opacity:".6"});
+    var dotS=el("circle",{r:5,fill:"var(--viz-series)",stroke:"var(--viz-surface)","stroke-width":2});
+    var dotH=el("circle",{r:4,fill:"var(--viz-surface)",stroke:"var(--viz-series)","stroke-width":2});
+    hoverG.appendChild(cross); hoverG.appendChild(dotH); hoverG.appendChild(dotS);
+    svg.appendChild(hoverG);
+
+    var hit=el("rect",{x:L-(PW/(n-1))/2,y:T-26,width:PW+(PW/(n-1)),height:PH+26,fill:"transparent"});
+    svg.appendChild(hit);
+
+    var tip=document.getElementById("altTip");
+    var root=svg.closest(".viz-root");
+
+    function show(i,clientX){
+      var r=D[i];
+      hoverG.setAttribute("opacity","1");
+      cross.setAttribute("x1",X(i)); cross.setAttribute("x2",X(i));
+      dotS.setAttribute("cx",X(i)); dotS.setAttribute("cy",Y(r.s));
+      dotH.setAttribute("cx",X(i)); dotH.setAttribute("cy",Y(r.h));
+      dotH.setAttribute("opacity", r.h>r.s+40 ? "1" : "0");
+      tip.innerHTML='<div class="t-d">'+r.d+' 2026</div><div class="t-p">'+r.p+'</div>'+
+        '<div class="t-r"><i>Sleep at</i><b>'+fmt(r.s)+' m</b></div>'+
+        (r.h>r.s ? '<div class="t-r"><i>Day’s high</i><b>'+fmt(r.h)+' m</b></div>' : '');
+      var box=svg.getBoundingClientRect(), rb=root.getBoundingClientRect();
+      var px=box.left + (X(i)/W)*box.width - rb.left;
+      var py=box.top  + (Y(Math.max(r.s,r.h))/H)*box.height - rb.top - 12;
+      tip.style.left=Math.max(70,Math.min(rb.width-70,px))+"px";
+      tip.style.top=Math.max(52,py)+"px";
+      tip.style.opacity="1";
+    }
+    function hide(){ hoverG.setAttribute("opacity","0"); tip.style.opacity="0"; }
+
+    function onMove(e){
+      var box=svg.getBoundingClientRect();
+      var vx=(e.clientX-box.left)/box.width*W;
+      var i=Math.round((vx-L)/(PW/(n-1)));
+      i=Math.max(0,Math.min(n-1,i));
+      show(i,e.clientX);
+    }
+    svg.addEventListener("pointermove",onMove);
+    svg.addEventListener("pointerdown",onMove);
+    svg.addEventListener("pointerleave",hide);
+
+    /* --- table view --- */
+    var tb=document.querySelector("#altTable tbody");
+    D.forEach(function(r){
+      var tr=document.createElement("tr");
+      tr.innerHTML="<td>"+r.d+"</td><td>"+r.p+"</td><td class='num'>"+fmt(r.s)+" m</td><td class='num'>"+
+        (r.h>r.s?fmt(r.h)+" m":"—")+"</td>";
+      tb.appendChild(tr);
+    });
+  })();
+  </script>
+
+  <!-- ============ TRANSIT ============ -->
+  <section class="leg leg-transit" id="transit">
+    <div class="leg-head"><h2>Getting there</h2><span class="range">Fri 25 – Sat 26 Sep</span></div>
+    <div class="leg-bar"></div>
+
+    <div class="day x">
+      <div class="when"><div class="dow">Friday</div><div class="date">25</div><div class="mon">Sep</div><div class="idx">Day 0</div></div>
+      <div>
+        <h4>Brussels → Bangkok <span class="badge b-ok">booked</span></h4>
+        <p><b>TG935</b> · Brussels 13:30 → Suvarnabhumi 05:35 (+1) · 11 h 05 · Boeing 787-9 · seats 59A / 59-ish.</p>
+        <ul>
+          <li>Thai allows <b>1 checked piece (23 kg)</b> per person in this fare — not a weight pool, so pack to the piece.</li>
+          <li>Sleep eastbound. You land into a 4 h 40 layover, which is the ideal slot to <b>pre-fill the Nepali arrival form</b> online (see Practical) and to get a couple of hours of daylight-adjusting sun in the terminal.</li>
+        </ul>
+        <div class="sleep"><span>🛏 <b>In the air</b></span><span>🧭 15 min ahead of Nepal time thinking starts now</span></div>
+      </div>
+    </div>
+
+    <div class="day n">
+      <div class="when"><div class="dow">Saturday</div><div class="date">26</div><div class="mon">Sep</div><div class="idx">Day 1</div></div>
+      <div>
+        <h4>Bangkok → Kathmandu · into Patan <span class="badge b-ok">flight + hotel booked</span></h4>
+        <p><b>TG319</b> · Suvarnabhumi 10:15 → Tribhuvan 12:25 · 3 h 25 · A330-300 · Terminal I.</p>
+        <ul>
+          <li><b>Sit on the right-hand side</b> flying west into Kathmandu — on a clear post-monsoon morning the whole eastern Himalaya, Everest included, lines up along the starboard windows.</li>
+          <li>On the ground: visa on arrival (~45–75 min), bags, <b>SIM/eSIM at the arrivals counter</b>, then a prepaid taxi. Patan is roughly 8 km / 35–50 min depending on traffic.</li>
+          <li>Check in at <b>Tajaa Pha The Heritage Home</b>, Chhayabahal 21, Pimbahal, Patan — a restored Newari house a five-minute walk from Patan Durbar Square. Breakfast included. Check-in from 10:00.</li>
+          <li><b>Afternoon, gently:</b> Patan Durbar Square and the <b>Patan Museum</b> (the best museum in Nepal, in the old royal palace — last entry around 17:00). Then Pimbahal pond and the courtyard temples on the walk home. Nothing more ambitious than that on day one.</li>
+          <li><b>Evening:</b> <b>Indra Jatra</b> runs 23–30 September in 2026. The main chariot day was the 25th, but the last nights still bring masked <em>lakhey</em> dancers, oil lamps and crowds to Kathmandu Durbar Square / Basantapur. A 20-minute taxi north gets you into it. If jet lag wins, skip it — the valley isn't going anywhere.</li>
+          <li><b>Dinner:</b> Newari, in Patan. Honacha behind the Durbar Square for the rough-and-real version; Café Swotha or Yala Mandala for a courtyard table and a beer.</li>
+        </ul>
+        <div class="sleep"><span>🛏 <b>Tajaa Pha The Heritage Home</b>, Patan · 1,350 m</span><span>📞 +977 1 5533770</span><span>🎟 Confirmation no. + PIN — in your Booking.com email</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ KATHMANDU ============ -->
+  <section class="leg leg-nepal" id="ktm1">
+    <div class="leg-head"><h2>Kathmandu Valley — first taste</h2><span class="range">Sun 27 – Mon 28 Sep</span></div>
+    <div class="leg-bar"></div>
+
+    <div class="day n">
+      <div class="when"><div class="dow">Sunday</div><div class="date">27</div><div class="mon">Sep</div><div class="idx">Day 2</div></div>
+      <div>
+        <h4>The big valley day — Boudha, Swayambhu, Pashupati <span class="badge b-todo">arrange a car + guide</span></h4>
+        <p>One full day is enough for the three that matter, if you run them in the right order and take a car with a driver for the whole day (~€35–45 for 8–10 h, ask the hotel). A licensed guide for the morning adds a lot — Kathmandu's temples are dense with meaning you will not read off the stones.</p>
+        <ul>
+          <li><b>07:00 · Boudhanath.</b> Go early. Walk the <em>kora</em> clockwise with Tibetan pilgrims while the butter lamps are still lit and the crowds haven't arrived, then breakfast on a rooftop looking at the eyes on the stupa. This is the single best hour of the Kathmandu leg.</li>
+          <li><b>10:00 · Swayambhunath.</b> The Monkey Temple on its hill — 365 steps if you want them, or drive round to the back entrance. Best valley panorama in the city. Keep a hand on your sunglasses; the macaques are professionals.</li>
+          <li><b>12:30 · Kathmandu Durbar Square &amp; Thamel.</b> Lunch, the Kumari Ghar (the living goddess's house), and the last of the Indra Jatra scaffolding. Do a first pass through Thamel to price gear you might still want for the trek — you can buy the missing bits here or in Pokhara.</li>
+          <li><b>17:15 · Pashupatinath.</b> The Bagmati cremation ghats and the evening <em>aarti</em> around 18:00–19:00: bells, fire, chanting, dusk. Non-Hindus can't enter the main temple, but the east bank terraces are where you want to be anyway. <b>Do not photograph the cremations.</b></li>
+        </ul>
+        <div class="note" style="margin-top:10px"><p><b>Before bed:</b> repack. You are flying to Bhutan in the morning and coming back to Kathmandu on 6 October only to transit to Pokhara. Decide tonight what goes to Bhutan, what goes on the trek, and what stays behind in storage — see the luggage plan on the Practical page.</p></div>
+        <div class="sleep"><span>🛏 <b>Tajaa Pha The Heritage Home</b>, Patan · 1,350 m</span></div>
+      </div>
+    </div>
+
+    <div class="day b">
+      <div class="when"><div class="dow">Monday</div><div class="date">28</div><div class="mon">Sep</div><div class="idx">Day 3</div></div>
+      <div>
+        <h4>Kathmandu → Paro · the flight everyone talks about <span class="badge b-ok">booked</span></h4>
+        <p><b>Drukair KB401</b> · Kathmandu 09:10 → Paro 10:30 · 1 h 05 · 30 kg checked allowance each. Booking ref is in your Drukair confirmation email.</p>
+        <ul>
+          <li><b>Leave Patan by 06:30.</b> Check-out is 12:00 but you'll be long gone; settle the bill the night before. Drukair wants you at the international terminal two hours ahead and the check-in queue is genuinely slow.</li>
+          <li><b>Sit on the left (A seats) going to Paro.</b> Eastbound along the range you get Everest, Makalu and Kanchenjunga stacked up on the port side — then the descent into Paro, which is the most theatrical landing in commercial aviation: a corkscrew between hillsides with the wingtips apparently in the pine trees.</li>
+          <li>Landing in Paro at 10:30 you are met by your Breathe Bhutan guide and driver (one KIA Sorento, yours for nine days) for the welcome ceremony, then the 1.5 h drive to Thimphu.</li>
+        </ul>
+        <div class="sleep"><span>🛏 <b>Khangzang Villas</b>, Thimphu · 2,320 m</span><span>🇧🇹 Bhutan is UTC+6 — set watches <b>15 minutes forward</b> from Nepal</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BHUTAN ============ -->
+  <section class="leg leg-bhutan" id="bhutan">
+    <div class="leg-head"><h2>Bhutan — Signature Experience</h2><span class="range">Mon 28 Sep – Tue 6 Oct · 8 nights</span></div>
+    <div class="leg-bar"></div>
+
+    <div class="note"><p>All of this is booked and paid through <b>Breathe Bhutan</b> (private tour, own guide and driver, all meals, all entries, SDF included). Nothing below needs arranging — it's here so you can see the shape of the days and know what to pack for which morning. What follows each day in italics is what we'd add on top of the operator's line.</p></div>
+
+    <div class="day b">
+      <div class="when"><div class="dow">Monday</div><div class="date">28</div><div class="mon">Sep</div><div class="idx">Bhutan 1</div></div>
+      <div>
+        <h4>Land Paro → Thimphu</h4>
+        <p>Welcome ceremony, transfer to Thimphu (1.5 h). School of Arts and Crafts with an interactive session. A consultation at the School of Astrology, then a blessing ceremony. Thimphu nightlife if you're still standing.</p>
+        <p><em>The astrology reading is one of the trip's quiet highlights — bring your exact birth times if you know them. And Thimphu at 2,320 m is your first altitude: drink more water than feels necessary and go easy on the first night's ara.</em></p>
+        <div class="sleep"><span>🛏 <b>Khangzang Villas</b>, Thimphu · 2,320 m</span></div>
+      </div>
+    </div>
+
+    <div class="day b">
+      <div class="when"><div class="dow">Tuesday</div><div class="date">29</div><div class="mon">Sep</div><div class="idx">Bhutan 2</div></div>
+      <div>
+        <h4>Takins, Wangditse, Dochula → Punakha 🎂</h4>
+        <p>Takin trail and the takin preserve. Hike to Wangditse temple. Prepare and offer butter lamps. Buddha Dordenma. Then the drive to Punakha over the <b>Dochula Pass</b> (2.5 h) and a leg-stretch at Lampari Botanical Park.</p>
+        <p><em>Stijn's birthday — and you spend it crossing a 3,100 m pass ringed by 108 chortens with the eastern Himalaya on the skyline if the morning is clear. Tell the guide the day before; Bhutanese hosts are very good at this sort of thing. Dochula's view window is roughly 07:00–10:00, so it's worth pressing to leave Thimphu early.</em></p>
+        <div class="sleep"><span>🛏 <b>Dhumra Farm Resort</b>, Punakha · 1,250 m</span></div>
+      </div>
+    </div>
+
+    <div class="day b">
+      <div class="when"><div class="dow">Wednesday</div><div class="date">30</div><div class="mon">Sep</div><div class="idx">Bhutan 3</div></div>
+      <div>
+        <h4>Village life, Khamsum Yulley, Punakha Dzong in national dress</h4>
+        <p>Rural activities at Ama Om homestay. Hike to Khamsum Yulley Namgyal Chorten (45 min). Picnic lunch by the river. Punakha Dzong wearing gho and kira, then the suspension bridge.</p>
+        <p><em>Punakha sits at only 1,250 m and is warm and humid — this is a shorts-and-shirt day after two cool ones. The dzong at the confluence of the Pho Chhu and Mo Chhu is the most beautiful building in the country; go late afternoon if you get the choice, when the whitewash goes gold. The suspension bridge is 180 m long and bounces.</em></p>
+        <div class="sleep"><span>🛏 <b>Dhumra Farm Resort</b>, Punakha · 1,250 m</span></div>
+      </div>
+    </div>
+
+    <div class="day b">
+      <div class="when"><div class="dow">Thursday</div><div class="date">1</div><div class="mon">Oct</div><div class="idx">Bhutan 4</div></div>
+      <div>
+        <h4>Nuns of Sangchen → Phobjikha</h4>
+        <p>Sangchen Dorji Lhuendrup nunnery and time with the nuns. Drive to Phobjikha via the Nubding valley (2.5 h). Lawala-to-Kumbu nature hike (3 h). Evening prayers at Gangtey Shedra.</p>
+        <p><em>Phobjikha is a glacial bowl at 3,000 m and the coldest place you'll sleep in Bhutan outside the Bumdra camp — the valley has almost no central heating and evenings bite. Wear the fleece to evening prayers. Sitting in on the monks' chanting as the light goes is the kind of thing that stays with you.</em></p>
+        <div class="sleep"><span>🛏 <b>Hotel Phobjikha</b>, Phobjikha · 3,000 m</span></div>
+      </div>
+    </div>
+
+    <div class="day b">
+      <div class="when"><div class="dow">Friday</div><div class="date">2</div><div class="mon">Oct</div><div class="idx">Bhutan 5</div></div>
+      <div>
+        <h4>Gangtey, the crane valley → Wangdue</h4>
+        <p>Early-morning cycling if you fancy it. Gangtey Monastery. The Gangtey Nature Trail (1.5 h). Crane Information Centre and, with luck, the first black-necked cranes. Drive to Lobesa (2.5 h).</p>
+        <p><em>The cranes fly in from Tibet from roughly late October, so early October is early — but scouts do arrive, and the centre's telescopes and the film are worth the stop regardless. Say yes to the cycling: the valley floor is flat, empty and beautiful at 07:00.</em></p>
+        <div class="sleep"><span>🛏 <b>Lobesa Boutique</b>, Wangdue · 1,350 m</span></div>
+      </div>
+    </div>
+
+    <div class="day b">
+      <div class="when"><div class="dow">Saturday</div><div class="date">3</div><div class="mon">Oct</div><div class="idx">Bhutan 6</div></div>
+      <div>
+        <h4>Chimi Lhakhang → Paro</h4>
+        <p>Sopsokha village and Chimi Lhakhang, the fertility temple of the Divine Madman. Drive to Paro (3 h). Paro Dzong. The National Museum of Bhutan. The easy, scenic Zuri hike (1 h). A sand mandala try-out. Check in and rest.</p>
+        <p><em>Sopsokha is where the painted phalluses on the house walls start making sense — Drukpa Kunley, the 15th-century "Divine Madman", is the patron saint of not taking yourself seriously. This is also your last real shopping stop before the trek. Tonight, repack: tomorrow you climb to 3,800 m and sleep there.</em></p>
+        <div class="sleep"><span>🛏 <b>Terma Linca</b>, Paro · 2,280 m</span></div>
+      </div>
+    </div>
+
+    <div class="day b">
+      <div class="when"><div class="dow">Sunday</div><div class="date">4</div><div class="mon">Oct</div><div class="idx">Bhutan 7</div></div>
+      <div>
+        <h4>Bumdra trek, day 1 — Sangchokhor to the sky burial ridge</h4>
+        <p>6–7 hours up from Sangchokhor monastery through blue pine and rhododendron to the Bumdra meadow at about 3,800 m. Hoist a prayer flag at the sky-burial site. Glamping under the stars.</p>
+        <p><em>The real altitude day of the Bhutan leg, and excellent preparation for Mardi Himal a week later. Carry a litre and a half of water and your shell; afternoon cloud builds fast on this ridge. Nights at the camp drop to around freezing — thermals, hat, and the down layer come out of the duffel tonight. The Milky Way from that meadow is absurd.</em></p>
+        <div class="sleep"><span>🛏 <b>Glamping camp</b>, Bumdra · ~3,800 m</span></div>
+      </div>
+    </div>
+
+    <div class="day b">
+      <div class="when"><div class="dow">Monday</div><div class="date">5</div><div class="mon">Oct</div><div class="idx">Bhutan 8</div></div>
+      <div>
+        <h4>Down onto Tiger's Nest — from above</h4>
+        <p>3–4 hours descending the ridge to arrive at Paro Taktsang <em>from over the top</em>, ahead of everyone climbing up from the car park. Optional hot stone bath at a farmhouse afterwards. Stroll and shop in Paro town. Namgay Artisanal Brewery if you're interested.</p>
+        <p><em>The single best way to do Tiger's Nest and the reason this itinerary is worth what it costs. Note: no bags, phones or cameras inside the monastery — there are lockers at the cafeteria, so shoot everything on the approach. Then say yes to the hot stone bath. You've earned it, and it's the last hot water before a week of teahouses.</em></p>
+        <div class="sleep"><span>🛏 <b>Terma Linca</b>, Paro · 2,280 m</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ POKHARA ============ -->
+  <section class="leg leg-trek" id="pokhara">
+    <div class="leg-head"><h2>Bhutan → Pokhara → the ridge</h2><span class="range">Tue 6 Oct</span></div>
+    <div class="leg-bar"></div>
+
+    <div class="day t">
+      <div class="when"><div class="dow">Tuesday</div><div class="date">6</div><div class="mon">Oct</div><div class="idx">Nepal 1</div></div>
+      <div>
+        <h4>Paro → Kathmandu → Pokhara → sunset on Sarangkot <span class="badge b-todo">domestic flight + hotel</span></h4>
+        <p><b>Drukair KB400</b> · Paro 07:10 → Kathmandu 08:10 <span class="badge b-ok">booked</span>. <b>Sit on the right-hand side</b> this time for the range.</p>
+        <ol class="steps">
+          <li><h4>08:10 · Land Kathmandu, international arrivals</h4><p>Immigration (your Nepali visa is multiple-entry, so you simply re-enter on it — no new fee), bags, then out. Budget 60–90 minutes.</p></li>
+          <li><h4>~09:45 · Cross to the domestic terminal</h4><p>About 500 m — a 5–10 minute walk, or the free shuttle. Separate check-in, so treat it as a fresh airport.</p></li>
+          <li><h4>~12:00–14:00 · Fly to Pokhara</h4><p>Buddha Air or Yeti, 25–30 minutes, roughly US$90–120 per person. <b>Book an early-afternoon departure</b>, not an 11:00 — you want slack for a late Paro arrival, and morning fog clears anyway. Left-hand side for the Annapurnas.</p></li>
+          <li><h4>~15:00 · Pick-up and drive up to Sarangkot</h4><p>Pokhara airport to Sarangkot is roughly 8–10 km but all of it uphill on switchbacks — allow 45 minutes. Arrange the transfer with the hotel in advance; taxis at the airport will also do it for around NPR 1,500–2,000.</p></li>
+          <li><h4>Sunset</h4><p><b>Himalayan Hidden Treasure</b>, on Sarangkot View Tower Road. Terrace restaurant, Phewa Lake below on one side, Annapurna South, Hiunchuli, Machhapuchhre and Dhaulagiri along the other. Order dinner early, watch the range go pink, sleep early.</p></li>
+        </ol>
+        <div class="tip"><p><b>Why Sarangkot on night one and not Lakeside.</b> You get the sunrise from your own balcony instead of joining the 05:00 taxi convoy from town; and the trailhead at Kande is a 30-minute drive <em>along the same ridge road</em>, so you start walking tomorrow without ever descending into Pokhara. It saves you the better part of a morning.</p></div>
+        <div class="sleep"><span>🛏 <b>Himalayan Hidden Treasure</b>, Sarangkot · ~1,590 m</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MARDI HIMAL ============ -->
+  <section class="leg leg-trek" id="mardi">
+    <div class="leg-head"><h2>The Mardi Himal trek</h2><span class="range">Wed 7 – Sun 11 Oct · 5 walking days</span></div>
+    <div class="leg-bar"></div>
+
+    <div class="card">
+      <h3>The route in one paragraph</h3>
+      <p>Mardi Himal is the quiet cousin of the Annapurna circuit routes: a single high ridge that climbs out of subtropical forest onto an open alpine spine directly beneath Machhapuchhre. You gain about 2,700 m over four days and lose it in one. There is no technical ground — it is steep, rooty forest walking at the bottom and a bare, exposed crest at the top. Because you'll have slept at 3,800 m at Bumdra just three days earlier, you arrive far better acclimatised than most people who start this trek.</p>
+      <div class="tblwrap"><table>
+        <tr><th>Day</th><th>Stage</th><th>Sleep at</th><th class="num">Altitude</th><th class="num">Walking</th></tr>
+        <tr><td>Wed 7</td><td>Kande → Australian Camp → Pothana → Deurali → Forest Camp</td><td>Forest Camp (Kokar)</td><td class="num">2,520 m</td><td class="num">4–5 h</td></tr>
+        <tr><td>Thu 8</td><td>Forest Camp → Rest Camp → Low Camp</td><td>Low Camp</td><td class="num">2,970 m</td><td class="num">3–4 h</td></tr>
+        <tr><td>Fri 9</td><td>Low Camp → Badal Danda → High Camp</td><td>High Camp</td><td class="num">3,580 m</td><td class="num">3–4 h</td></tr>
+        <tr><td>Sat 10</td><td>High Camp → View Point → Upper View Point (→ Base Camp) → down</td><td>Badal Danda</td><td class="num">4,200–4,500 m</td><td class="num">7–9 h</td></tr>
+        <tr><td>Sun 11</td><td>Badal Danda → Siding village → jeep to Pokhara</td><td>Pokhara</td><td class="num">820 m</td><td class="num">4–5 h + 2 h drive</td></tr>
+      </table></div>
+    </div>
+
+    <div class="day t">
+      <div class="when"><div class="dow">Wednesday</div><div class="date">7</div><div class="mon">Oct</div><div class="idx">Trek 1</div></div>
+      <div>
+        <h4>Sunrise on Sarangkot, then into the forest <span class="badge b-todo">guide + permits</span></h4>
+        <ul>
+          <li><b>05:45 · Sunrise</b> from the hotel terrace with a coffee. Annapurna II, IV, III, Gangapurna, Annapurna South, Hiunchuli and Machhapuchhre light up left to right over about twenty minutes. This is the view people fly to Nepal for.</li>
+          <li><b>08:30 · Meet your guide</b> (and porter, if you take one) at the hotel. Permits checked, duffels handed over, spare luggage sent down to your Pokhara hotel for the week.</li>
+          <li><b>09:00 · Drive to Kande</b> (1,770 m), 30 minutes west along the ridge road. ACAP checkpoint at the trailhead.</li>
+          <li><b>The walk:</b> stone steps up to <b>Australian Camp</b> (2,060 m — teahouse terrace, first full Annapurna panorama, worth the tea stop), on through Pothana and Deurali where the trail leaves the Annapurna Base Camp route and turns north into oak and rhododendron forest. Moss, orchids, birdsong, and a long gentle climb under canopy to <b>Forest Camp</b> at 2,520 m. Six to eight teahouses in a clearing; no views, all atmosphere.</li>
+        </ul>
+        <div class="tip"><p><b>Easy first day by design.</b> +750 m over 4–5 hours with a genuine lunch stop. Fill your bottles at Australian Camp and treat the water — from Kande upward it's purification tablets or a filter, not bought plastic.</p></div>
+        <div class="sleep"><span>🛏 <b>Teahouse, Forest Camp</b> · 2,520 m</span><span>🌡 ~8–15 °C at night</span></div>
+      </div>
+    </div>
+
+    <div class="day t">
+      <div class="when"><div class="dow">Thursday</div><div class="date">8</div><div class="mon">Oct</div><div class="idx">Trek 2</div></div>
+      <div>
+        <h4>Out of the trees — Low Camp</h4>
+        <ul>
+          <li>A short, kind day: three to four hours of ridge forest through Rest Camp to <b>Low Camp</b> (2,970 m). The canopy thins as you go and the rhododendrons get gnarled and wind-bent.</li>
+          <li>Low Camp is where the mountain finally shows itself: <b>Machhapuchhre fills the entire northern sky</b>, unreasonably close, and Annapurna South and Hiunchuli sit to the left. Get there by early afternoon, before the cloud builds.</li>
+          <li><b>Use the afternoon.</b> Walk 45 minutes further up the ridge and back for the acclimatisation, or just sit outside with tea, a book and the view. Deep-fried Tibetan bread, dal bhat, and bed by nine.</li>
+        </ul>
+        <div class="note"><p><b>Altitude from here on.</b> Sleep low, walk high, drink 3–4 litres a day, and tell your guide about any headache rather than toughing it out. You've been at 3,800 m recently, which helps a great deal — but Bumdra was one night, not a week.</p></div>
+        <div class="sleep"><span>🛏 <b>Teahouse, Low Camp</b> · 2,970 m</span><span>🌡 ~3–8 °C at night</span></div>
+      </div>
+    </div>
+
+    <div class="day t">
+      <div class="when"><div class="dow">Friday</div><div class="date">9</div><div class="mon">Oct</div><div class="idx">Trek 3</div></div>
+      <div>
+        <h4>The spine — Badal Danda to High Camp</h4>
+        <ul>
+          <li>Three to four hours and +610 m, but the character changes completely. The forest gives out around 3,200 m and you walk a narrow open crest with drops on both sides, dwarf rhododendron underfoot and the whole Annapurna wall ahead.</li>
+          <li><b>Badal Danda</b> ("cloud hill", 3,210 m) is the tea stop and — depending on how you feel — a plausible place to stop altogether and split the climb. Talk to your guide.</li>
+          <li><b>High Camp</b> at 3,580 m is the last permanent teahouse on the route: basic rooms, shared everything, a dining hut with a stove, and one of the great teahouse views in Nepal. Arrive early, eat early, be in your sleeping bag by eight.</li>
+          <li>Agree tomorrow's start time tonight, order breakfast in advance, and lay out your summit layers where you can find them in the dark.</li>
+        </ul>
+        <div class="sleep"><span>🛏 <b>Teahouse, High Camp</b> · 3,580 m</span><span>🌡 −2 to +4 °C at night · a proper cold night</span></div>
+      </div>
+    </div>
+
+    <div class="day t">
+      <div class="when"><div class="dow">Saturday</div><div class="date">10</div><div class="mon">Oct</div><div class="idx">Trek 4 — the big one</div></div>
+      <div>
+        <h4>Upper View Point, 4,200 m — and Base Camp if the day allows</h4>
+        <ul>
+          <li><b>04:30 · Head torches on.</b> Climb the ridge in the dark, steeply at first, then along a bare exposed spine.</li>
+          <li><b>~06:00 · View Point (3,900 m)</b> for sunrise: Machhapuchhre catches first, then Annapurna South and Hiunchuli, then the whole wall. On the other side, the Pokhara valley is a lake of cloud with hills poking through.</li>
+          <li><b>~08:00 · Upper View Point (4,200 m)</b> — the trip's summit in every sense. Machhapuchhre's twin fishtail summit is ~2 km away and 2.5 km above you, close enough to see the flutings in the ice.</li>
+          <li><b>Optional: Mardi Himal Base Camp (4,500 m)</b>, another two hours out and back over easy but airy ground. Take it if you're both moving well and the weather is holding; the ridge narrows and the sense of exposure is real. Your guide will call it.</li>
+          <li><b>Then all the way down</b> to High Camp for a late breakfast and on to <b>Badal Danda</b> (3,210 m) for the night — sleeping 370 m lower than last night, which your body will thank you for.</li>
+        </ul>
+        <div class="alert"><p><b>Weather rule.</b> If the morning is socked in, don't burn the day — go up as far as View Point, come back, and either take the second attempt tomorrow morning (you have the buffer on 13 October) or descend. The mountain will not be photographed through cloud, and this ridge in wind at 4,200 m is genuinely cold.</p></div>
+        <div class="sleep"><span>🛏 <b>Teahouse, Badal Danda</b> · 3,210 m</span><span>🥾 The longest day: 7–9 h, ~+900 m / −1,300 m</span></div>
+      </div>
+    </div>
+
+    <div class="day t">
+      <div class="when"><div class="dow">Sunday</div><div class="date">11</div><div class="mon">Oct</div><div class="idx">Trek 5</div></div>
+      <div>
+        <h4>Down the far side to Siding, and a hot shower</h4>
+        <ul>
+          <li>Leave the ridge on the eastern descent — a completely different landscape from the way up. Steep zig-zags through forest, then terraced millet and rice, then the Gurung village of <b>Siding</b> (1,750 m) with its slate roofs and buffalo. Four to five hours, hard on the knees; poles earn their place today.</li>
+          <li>Jeep from Siding to Pokhara, about two hours on a rough road that improves as you go, arriving mid-to-late afternoon.</li>
+          <li><b>Lakeside.</b> Shower, laundry in, a massage if you can get one booked, then dinner and a cold Everest beer somewhere on the strip with the boats on Phewa Lake in front of you. You've earned every bit of it.</li>
+          <li><b>Tonight is also Ghatasthapana</b> — the first day of Dashain 2026. The town will feel different from here on: marigolds, bamboo swings going up on every open lot, kites in the afternoon sky.</li>
+        </ul>
+        <div class="sleep"><span>🛏 <b>Pokhara, Lakeside</b> · 820 m <span class="badge b-todo">to book</span></span><span>🎉 Tip your guide and porter tonight — see Practical</span></div>
+      </div>
+    </div>
+
+    <div class="day t">
+      <div class="when"><div class="dow">Monday</div><div class="date">12</div><div class="mon">Oct</div><div class="idx">Nepal 7</div></div>
+      <div>
+        <h4>Pokhara, recovery mode</h4>
+        <p>Do not set an alarm. Then pick two things from this list and leave the rest:</p>
+        <ul>
+          <li><b>Paragliding from Sarangkot</b> — this is one of the top three sites on earth for it, and October is the start of the good season. Thirty minutes tandem runs roughly US$90–100, an hour US$110–150. Fly between 09:00 and 12:00; only with an NCAA-licensed operator and a CIVL-certified pilot. Landing is at the lakeshore.</li>
+          <li><b>Row yourself across Phewa Lake</b> to Tal Barahi temple on its island, then on to the far shore and the 45-minute climb up to the <b>World Peace Pagoda</b>. Best late afternoon; come down by taxi.</li>
+          <li><b>The International Mountain Museum</b> — much better than it sounds, especially after a trek: the history of Himalayan mountaineering, the ethnography of the hill peoples, a full Sherpa house.</li>
+          <li><b>An hour of Ayurvedic massage</b> in Lakeside, ~NPR 2,500–4,000. Your calves will file a formal complaint otherwise.</li>
+          <li>Old Pokhara bazaar and Bindhyabasini temple for the non-touristy half of the city, best in the morning.</li>
+        </ul>
+        <div class="sleep"><span>🛏 <b>Pokhara, Lakeside</b> · 820 m <span class="badge b-todo">to book</span></span></div>
+      </div>
+    </div>
+
+    <div class="day t">
+      <div class="when"><div class="dow">Tuesday</div><div class="date">13</div><div class="mon">Oct</div><div class="idx">Nepal 8</div></div>
+      <div>
+        <h4>The buffer day <span class="badge b-flex">keep this free</span></h4>
+        <p>Deliberately unplanned. In order of likelihood, this day gets used for:</p>
+        <ul>
+          <li><b>A trek that ran a day long</b> — bad weather at High Camp, a slow descent, a stomach that needed a day. This is the slack that keeps a slipped trek from eating your flight home.</li>
+          <li><b>The paragliding you didn't get</b> because day 12 was cloudy or windy.</li>
+          <li><b>Begnas Lake</b> — 30 minutes east of Pokhara and everything Phewa was twenty years ago: no tourist strip, terraced hills, a rowboat, fish for lunch at a lakeside shack. The best half-day in the valley if you want quiet.</li>
+          <li><b>Devi's Falls and the Gupteshwor Mahadev cave</b>, plus the Tibetan settlement at Tashiling for carpets and a very different refugee history — a compact half-day loop by taxi.</li>
+          <li>Or simply: a second morning at the lake, a book, and a long lunch.</li>
+        </ul>
+        <div class="sleep"><span>🛏 <b>Pokhara, Lakeside</b> · 820 m <span class="badge b-todo">to book</span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VALLEY FINALE ============ -->
+  <section class="leg leg-nepal" id="valley">
+    <div class="leg-head"><h2>Back to the valley — Dashain week</h2><span class="range">Wed 14 – Sat 17 Oct</span></div>
+    <div class="leg-bar"></div>
+
+    <div class="day n">
+      <div class="when"><div class="dow">Wednesday</div><div class="date">14</div><div class="mon">Oct</div><div class="idx">Nepal 9</div></div>
+      <div>
+        <h4>Fly to Kathmandu → Bhaktapur <span class="badge b-todo">flight + hotel</span></h4>
+        <ul>
+          <li><b>Morning flight Pokhara → Kathmandu</b>, 25–30 minutes. Take an early slot: mountain weather is best before 10:00, and Dashain week is the single busiest travel period of the Nepali year — <b>book this one well ahead</b> and expect full aircraft.</li>
+          <li>Drive straight east past Kathmandu to <b>Bhaktapur</b> (about an hour from the airport, and conveniently on the airport's side of the city).</li>
+          <li><b>Sleep inside the old city.</b> This is the trick with Bhaktapur: day-trippers arrive at ten and leave at five, and the medieval town in between the tour buses — at dusk, at dawn, lit by doorway lamps — is the finest surviving Newari city in the valley.</li>
+          <li><b>Evening:</b> Durbar Square and the Golden Gate, then Taumadhi Square under the five-tiered <b>Nyatapola</b> temple with a beer on a rooftop. Dashain preparations will be everywhere.</li>
+        </ul>
+        <div class="sleep"><span>🛏 <b>Bhaktapur old town</b> · 1,400 m <span class="badge b-todo">to book</span></span></div>
+      </div>
+    </div>
+
+    <div class="day n">
+      <div class="when"><div class="dow">Thursday</div><div class="date">15</div><div class="mon">Oct</div><div class="idx">Nepal 10</div></div>
+      <div>
+        <h4>Bhaktapur at dawn, then into Kathmandu <span class="badge b-todo">hotel</span></h4>
+        <ul>
+          <li><b>06:30</b> — walk the empty squares before the gates start selling tickets. Pottery Square with the morning's pots drying in rows, the wood-carving lanes, the Peacock Window in Dattatreya Square.</li>
+          <li><b>Eat the <em>juju dhau</em></b>, Bhaktapur's "king of yoghurts", served in a clay bowl. It is genuinely one of the best things in Nepal.</li>
+          <li>Midday: transfer into Kathmandu — either Thamel (shops, restaurants, noise) or back to Patan (courtyards, quiet, better food). Given you already know Patan, and it's a much calmer base, we'd go back there.</li>
+          <li><b>Afternoon:</b> whatever you missed on 27 September. If you only do one thing: <b>Boudhanath at dusk</b> for the lamp-lighting and the kora.</li>
+        </ul>
+        <div class="sleep"><span>🛏 <b>Kathmandu / Patan</b> · 1,350 m <span class="badge b-todo">to book</span></span></div>
+      </div>
+    </div>
+
+    <div class="day n">
+      <div class="when"><div class="dow">Friday</div><div class="date">16</div><div class="mon">Oct</div><div class="idx">Nepal 11</div></div>
+      <div>
+        <h4>Last full day — Dashain in the streets</h4>
+        <p>A day with no fixed shape. Some good ways to spend it:</p>
+        <ul>
+          <li><b>Shopping, properly.</b> Thamel and Patan for pashmina (ask for the burn test), thangka, singing bowls, Nepali tea, handmade lokta paper, a khukuri. Bargain politely; expect to land 20–30% under the opening price. Patan's Mahaguthi and the fair-trade shops around the Durbar Square are fixed-price and reliable if you'd rather not haggle.</li>
+          <li><b>A Nepali cooking class</b> — half a day, market visit included, and you come home able to make momos and dal bhat properly.</li>
+          <li><b>The Garden of Dreams</b> in Thamel: a restored Edwardian folly garden, an unreasonably pleasant place to read for two hours in the middle of the chaos.</li>
+          <li><b>Kirtipur</b> — a Newar hill town on the valley rim, twenty minutes away, almost no tourists, and one of the best views back over Kathmandu.</li>
+          <li><b>Dashain is in full swing:</b> giant bamboo swings (<em>ping</em>) at every crossroads, kites over the rooftops all afternoon, markets heaving, families in new clothes. Be aware that goat sacrifice is part of this festival from around 19 October — you leave before the main days, but you may see preparations.</li>
+          <li>Repack tonight. Weigh the bags — you will have bought more than you think.</li>
+        </ul>
+        <div class="sleep"><span>🛏 <b>Kathmandu / Patan</b> · 1,350 m <span class="badge b-todo">to book</span></span></div>
+      </div>
+    </div>
+
+    <div class="day x">
+      <div class="when"><div class="dow">Saturday</div><div class="date">17</div><div class="mon">Oct</div><div class="idx">Day 23</div></div>
+      <div>
+        <h4>Kathmandu → Bangkok → Brussels <span class="badge b-ok">booked</span></h4>
+        <p><b>TG320</b> · Kathmandu 13:30 → Suvarnabhumi 18:15. Then a 5 h 50 layover and <b>TG934</b> · Bangkok 00:05 → Brussels 07:15 on Sunday 18 October.</p>
+        <ul>
+          <li><b>Leave for the airport by 10:15.</b> Today is <b>Phulpati</b>, the seventh day of Dashain — there are processions in central Kathmandu and traffic can be unpredictable. Build in the extra half hour.</li>
+          <li>Tribhuvan departures are slow and chaotic: multiple security screenings, manual checks, no jet bridge. Three hours is right, not two.</li>
+          <li>Spend your last rupees airside — you cannot change Nepali rupees outside Nepal, and the exchange desks want the original ATM receipts. Keep NPR 500–1,000 back for airport coffee and give the rest away.</li>
+          <li>Land Brussels 07:15 Sunday morning. Take the Monday off.</li>
+        </ul>
+        <div class="sleep"><span>🛏 <b>In the air</b></span><span>✈ Booking ref — in your Thai Airways email</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RATIONALE ============ -->
+  <section id="shape">
+    <h2 class="sec">Why this shape</h2>
+    <div class="grid2">
+      <div class="card">
+        <h3>Bhutan first is a gift, not an obstacle</h3>
+        <p>Your fixed dates put Bhutan before Nepal, which at first looks like the wrong way round. It isn't. You finish Bhutan with the two-day Bumdra trek, sleeping at 3,800 m on 4 October. Three days later you start Mardi Himal — arriving at the trailhead already acclimatised, already walking fit, and already in the rhythm. Most people do this trek cold off a plane; you won't.</p>
+      </div>
+      <div class="card">
+        <h3>Sarangkot before the trail, Lakeside after</h3>
+        <p>Sleeping at Sarangkot on arrival buys you a private sunrise and a trailhead that's thirty minutes away along the ridge instead of an hour and a half up from town. Lakeside afterwards gives you the hot showers, the massages, the bakeries and the boats — which is what you actually want on the far side of five days of teahouses.</p>
+      </div>
+      <div class="card">
+        <h3>Eleven nights, five of them walking</h3>
+        <p>The trek eats 6 to 11 October. That leaves two soft days in Pokhara, a full buffer day, and three nights back in the valley. The buffer is not padding: Nepali domestic flights cancel for weather, treks run a day long, and the one thing you cannot flex is TG320 at 13:30 on the 17th.</p>
+      </div>
+      <div class="card">
+        <h3>You arrive on one festival and leave on another</h3>
+        <p><b>Indra Jatra</b> (23–30 Sep) is still running on your first evening — masked dances and the Kumari in Kathmandu Durbar Square. <b>Dashain</b> begins 11 October, the day you walk off the mountain, and builds all week: swings, kites, marigolds, and the entire country travelling home. That last fact is the practical one — book every domestic flight and hotel from the 11th onward as early as you possibly can.</p>
+      </div>
+    </div>
+
+    <h2 class="sec">Where you sleep, at a glance</h2>
+    <div class="tblwrap"><table>
+      <tr><th>Nights</th><th>Where</th><th>Place</th><th>Status</th></tr>
+      <tr><td>26–27 Sep</td><td>Patan, Kathmandu</td><td>Tajaa Pha The Heritage Home</td><td><span class="badge b-ok">booked</span></td></tr>
+      <tr><td>28 Sep – 5 Oct</td><td>Bhutan</td><td>Khangzang · Dhumra ×2 · Phobjikha · Lobesa · Terma Linca · Bumdra camp · Terma Linca</td><td><span class="badge b-ok">booked</span></td></tr>
+      <tr><td>6 Oct</td><td>Sarangkot</td><td>Himalayan Hidden Treasure</td><td><span class="badge b-todo">to book</span></td></tr>
+      <tr><td>7–10 Oct</td><td>Mardi Himal ridge</td><td>Forest Camp · Low Camp · High Camp · Badal Danda</td><td><span class="badge b-todo">via agency</span></td></tr>
+      <tr><td>11–13 Oct</td><td>Pokhara Lakeside</td><td>3 nights</td><td><span class="badge b-todo">to book</span></td></tr>
+      <tr><td>14 Oct</td><td>Bhaktapur old town</td><td>1 night</td><td><span class="badge b-todo">to book</span></td></tr>
+      <tr><td>15–16 Oct</td><td>Kathmandu / Patan</td><td>2 nights</td><td><span class="badge b-todo">to book</span></td></tr>
+    </table></div>
+
+    <div class="tip"><p><b>Next step:</b> everything marked <span class="badge b-todo">to book</span> is listed in booking order, with prices and who to contact, on the <a href="practical.html">Practical arrangements</a> page. The trekking guide and the two domestic flights are the urgent ones.</p></div>
+  </section>
+
+  <footer>
+    Built 25 September 2026 · dates and flight details taken from your booking documents · prices and permit fees are September 2026 estimates, confirm on the ground.
+  </footer>
+</div>
+</body>
+</html>
