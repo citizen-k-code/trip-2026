@@ -270,3 +270,15 @@ details.viz-table{margin-top:12px}
   th{background:#eee;color:#000}
   footer{margin-top:24px;font-size:8pt}
 }
+
+/* ---------- illustrated icon cards (mudras, postures) ---------- */
+.icon-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(224px,1fr));gap:14px;margin:16px 0}
+.icon-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px 18px;display:flex;flex-direction:column}
+.icon-card .fig{display:flex;justify-content:center;align-items:flex-end;margin:0 0 12px;padding:6px 0 10px;border-bottom:1px solid var(--line)}
+.icon-card svg{width:98px;height:auto;color:var(--ink)}
+.icon-card h3{font-size:1rem;margin-bottom:1px;letter-spacing:0}
+.icon-card .alt{color:var(--muted);font-size:.79rem;font-style:italic;margin-bottom:9px}
+.icon-card p{font-size:.9rem;line-height:1.62;margin:0}
+.icon-card .spot{margin-top:auto;padding-top:10px;font-size:.83rem;color:var(--muted)}
+.icon-card .spot b{color:var(--gold);font-weight:650;letter-spacing:.06em;font-size:.72rem;text-transform:uppercase;display:block;margin-bottom:2px}
+@media print{.icon-card{break-inside:avoid}.icon-card svg{width:70px}}
