@@ -226,6 +226,9 @@ details.viz-table{margin-top:12px}
 .entry .meta{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:7px}
 .entry h3{font-family:var(--serif);font-weight:400;font-size:1.28rem;margin-bottom:8px}
 .entry .tags{margin-top:13px;display:flex;flex-wrap:wrap;gap:6px}
+.entry-photo{margin:4px 0 14px}
+.entry-photo img{display:block;width:100%;height:auto;border-radius:calc(var(--radius) - 4px)}
+.entry-photo figcaption{font-size:.8rem;color:var(--muted);margin-top:7px}
 .tag{font-size:.72rem;padding:3px 9px;border-radius:99px;background:var(--card-2);border:1px solid var(--line-2);color:var(--muted)}
 .placeholder{border:1px dashed var(--line-2);background:transparent;border-radius:var(--radius);padding:22px 24px;margin:16px 0;color:var(--muted)}
 .placeholder h3{color:var(--ink);margin-bottom:8px}
