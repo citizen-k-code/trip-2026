@@ -104,6 +104,10 @@ hr{border:none;border-top:1px solid var(--line);margin:34px 0}
 .brand-mark{font-family:var(--serif);font-size:2.4rem;letter-spacing:-.04em;line-height:1;margin-bottom:18px;color:var(--gold-bright)}
 .brand strong{font-size:1.05rem}
 .brand>span:last-child{font-size:.72rem;letter-spacing:.12em;color:#a9bcc8}
+.lang{display:flex;gap:6px;margin-top:20px}
+.lang a{font-size:.72rem;font-weight:600;letter-spacing:.1em;padding:4px 10px;border:1px solid #55707f;border-radius:99px;color:#a9bcc8;text-decoration:none}
+.lang a[href]:hover{color:#fff;background:var(--sidebar-hover)}
+.lang a[aria-current]{background:var(--gold-bright);border-color:var(--gold-bright);color:#0f2230}
 .sidebar nav{display:grid;gap:4px;margin-top:34px}
 .sidebar nav a{
   display:grid;color:var(--sidebar-ink);padding:10px 12px;text-decoration:none;
@@ -249,6 +253,7 @@ details.viz-table{margin-top:12px}
   .sidebar{position:static;height:auto;padding:18px 20px;display:block}
   .brand{display:grid;grid-template-columns:auto 1fr;gap:1px 13px;align-items:center}
   .brand-mark{font-size:1.9rem;margin:0;grid-row:span 2}
+  .lang{margin-top:12px}
   .sidebar nav{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
   .sidebar nav a{padding:7px 10px;font-size:.85rem}
   .sidebar nav a span{display:none}
