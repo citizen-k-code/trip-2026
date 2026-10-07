@@ -298,3 +298,20 @@ details.viz-table{margin-top:12px}
 .icon-card .spot{margin-top:auto;padding-top:10px;font-size:.83rem;color:var(--muted)}
 .icon-card .spot b{color:var(--gold);font-weight:650;letter-spacing:.06em;font-size:.72rem;text-transform:uppercase;display:block;margin-bottom:2px}
 @media print{.icon-card{break-inside:avoid}.icon-card svg{width:70px}}
+
+/* ---------- experiences: country split ---------- */
+.country-tabs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:44px 0 0}
+.country-tabs a{display:flex;flex-direction:column;gap:2px;padding:14px 18px;border:1px solid var(--line);border-radius:var(--radius);background:var(--card);text-decoration:none;color:var(--ink)}
+.country-tabs a strong{font-family:var(--serif);font-weight:400;font-size:1.45rem;line-height:1.1}
+.country-tabs a span{font-size:.78rem;color:var(--muted)}
+.country-tabs a:hover{border-color:var(--gold)}
+.country-tabs a.on{border-color:var(--gold);box-shadow:inset 0 -3px 0 var(--gold)}
+.land-head{margin-top:34px}
+.land-head h2,#land-bhutan>.section:first-child>h2{font-size:clamp(1.9rem,3.2vw,2.6rem)}
+#land-bhutan>.section:first-child{margin-top:34px}
+.country>.section:first-of-type,.country>.land-head+.section{margin-top:28px}
+.jump.sub{margin:10px 0 0}
+.day-divider{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;margin:46px 0 6px;padding-top:14px;border-top:2px solid var(--line-2);scroll-margin-top:16px}
+.day-divider strong{font-family:var(--serif);font-weight:400;font-size:1.35rem}
+.day-divider span{color:var(--muted);font-size:.9rem}
+@media print{.country[hidden]{display:block!important}.country-tabs{display:none}}
