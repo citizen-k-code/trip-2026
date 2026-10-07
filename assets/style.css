@@ -235,6 +235,9 @@ details.viz-table{margin-top:12px}
 .entry .tags{margin-top:13px;display:flex;flex-wrap:wrap;gap:6px}
 .entry-photo{margin:4px 0 14px}
 .entry-photo img{display:block;width:100%;height:auto;border-radius:calc(var(--radius) - 4px)}
+.entry-video{margin:4px 0 14px;max-width:340px}
+.entry-video iframe{display:block;width:100%;aspect-ratio:9/16;height:auto;border:0;border-radius:calc(var(--radius) - 4px);background:var(--card-2)}
+.entry-video figcaption{font-size:.8rem;color:var(--muted);margin-top:7px}
 .entry-photo figcaption{font-size:.8rem;color:var(--muted);margin-top:7px}
 .photo-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:4px 0 14px}
 .photo-row .entry-photo{margin:0}
