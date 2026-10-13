@@ -315,3 +315,6 @@ details.viz-table{margin-top:12px}
 .day-divider strong{font-family:var(--serif);font-weight:400;font-size:1.35rem}
 .day-divider span{color:var(--muted);font-size:.9rem}
 @media print{.country[hidden]{display:block!important}.country-tabs{display:none}}
+.album-link{margin-top:14px}
+.album-link a{display:inline-block;padding:8px 14px;border:1px solid var(--gold);border-radius:99px;text-decoration:none;color:var(--ink);font-size:.9rem}
+.album-link a:hover{background:var(--card-2)}
